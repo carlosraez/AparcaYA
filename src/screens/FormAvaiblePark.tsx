@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+
+import { SearchGoogleInput } from '../components/SearchGoogleInput';
 
 export const FormAvaiblePark = () => {
   return (
@@ -8,6 +10,7 @@ export const FormAvaiblePark = () => {
       <Text style={styles.subtitleText}>
         Todo va a estar registrado por Google Maps
       </Text>
+      <SearchGoogleInput />
     </View>
   );
 };
