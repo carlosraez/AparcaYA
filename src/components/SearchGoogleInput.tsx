@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { View, Text } from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
-import { apiGoolge } from '../config/api';
+import { apiGoogle } from '../config/apiGoogle';
 
 export const SearchGoogleInput = () => {
   const ref = useRef();
@@ -38,7 +38,7 @@ export const SearchGoogleInput = () => {
           console.log(data, details);
         }}
         query={{
-          key: apiGoolge,
+          key: apiGoogle,
           language: 'es',
           rankby: 'distance',
           types: 'address',
