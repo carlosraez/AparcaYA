@@ -61,4 +61,4 @@ buck-out/
 /vendor/bundle/
 
 # Api Google
- apiGoogle.*
+ apiGoogle*
