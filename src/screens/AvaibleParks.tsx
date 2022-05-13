@@ -1,11 +1,10 @@
-import { CardStyleInterpolators } from '@react-navigation/stack';
 import React from 'react';
-import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 
 import { Parking } from '../components/Parking';
 
-export const AvaibleParks = () => {
+export const AvaibleParks = ({ navigation }: any) => {
   return (
     <View>
       <FlatList
@@ -14,7 +13,7 @@ export const AvaibleParks = () => {
         ListHeaderComponent={
           <Text style={styles.title}>Parking Disponible</Text>
         }
-        renderItem={() => <Parking />}
+        renderItem={() => <Parking navigation={navigation} />}
         onEndReachedThreshold={0.4}
         showsVerticalScrollIndicator={true}
       />

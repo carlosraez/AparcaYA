@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Home } from '../screens/Home';
 import { AvaibleParks } from '../screens/AvaibleParks';
 import { FormAvaiblePark } from '../screens/FormAvaiblePark';
+import { ConfirmationParkingBooking } from '../screens/ConfirmationParkingBooking';
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,10 @@ export const Navigation = () => {
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="FormAvaiblePark" component={FormAvaiblePark} />
       <Stack.Screen name="AvaibleParks" component={AvaibleParks} />
+      <Stack.Screen
+        name="ConfirmationParkingBooking"
+        component={ConfirmationParkingBooking}
+      />
     </Stack.Navigator>
   );
 };

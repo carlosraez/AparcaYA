@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export const Parking = () => {
+export const Parking = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
       <Image source={require('../assets/carlos.png')} style={styles.profile} />
@@ -16,8 +17,12 @@ export const Parking = () => {
       <Text style={styles.distance}>
         1<Text style={styles.description}>€</Text>
       </Text>
-      <View style={styles.bookingAction}>
-        <Text style={styles.bookingActionText}>Aparca YA</Text>
+      <View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('ConfirmationParkingBooking')}
+          style={styles.bookingAction}>
+          <Text style={styles.bookingActionText}>Aparca YA</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
