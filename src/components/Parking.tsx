@@ -1,15 +1,17 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export const Parking = () => {
   return (
     <View style={styles.container}>
       <Image source={require('../assets/carlos.png')} style={styles.profile} />
       <Text style={styles.rating}>
-        Valoración <Text style={styles.ratingNumber}>5/5*</Text>
+        <Text style={styles.ratingNumber}>5/5*</Text>
       </Text>
+      <Icon style={styles.icon} name="camera" size={25} color="black" />
       <Text style={styles.distance}>
-        5 <Text style={styles.description}>km</Text>
+        5<Text style={styles.description}>km</Text>
       </Text>
       <Text style={styles.distance}>
         1<Text style={styles.description}>€</Text>
@@ -32,6 +34,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderBottomWidth: 5,
     borderTopWidth: 5,
+    marginLeft: 3,
+    marginRight: 3,
   },
   profile: {
     marginLeft: 10,
@@ -47,6 +51,9 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: 'bold',
   },
+  icon: {
+    marginLeft: 10,
+  },
   distance: {
     fontSize: 35,
     marginLeft: 10,
@@ -57,7 +64,8 @@ const styles = StyleSheet.create({
     fontWeight: '400',
   },
   bookingAction: {
-    marginRight: 10,
+    marginRight: 5,
+    marginLeft: 5,
     borderRadius: 10,
     height: 30,
     width: 100,

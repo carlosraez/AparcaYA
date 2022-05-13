@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 
 import { SearchGoogleInput } from '../components/SearchGoogleInput';
 
-export const FormAvaiblePark = () => {
+export const FormAvaiblePark = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>¿A donde vás?</Text>
@@ -11,6 +11,13 @@ export const FormAvaiblePark = () => {
         Todo va a estar registrado por Google Maps
       </Text>
       <SearchGoogleInput />
+      <Button
+        onPress={() => {
+          navigation.navigate('AvaibleParks');
+        }}
+        title="Buscar Aparcamiento YA"
+        color="#08a600"
+      />
     </View>
   );
 };
