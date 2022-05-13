@@ -36,6 +36,8 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
+
+
 # BUCK
 buck-out/
 \.buckd/
@@ -60,5 +62,3 @@ buck-out/
 /ios/Pods/
 /vendor/bundle/
 
-# Api Google
- apiGoogle*

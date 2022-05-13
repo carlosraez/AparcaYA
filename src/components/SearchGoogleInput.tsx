@@ -1,17 +1,23 @@
-import React, { useEffect, useRef } from 'react';
-import { View, Text } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View } from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+import { useNavigation } from '@react-navigation/native';
+
 import { apiGoogle } from '../config/apiGoogle';
 
 export const SearchGoogleInput = () => {
-  const ref = useRef();
+  const [destination, setDestination] = useState('');
+
+  const navigation = useNavigation();
 
   useEffect(() => {
-    ref.current?.setAddressText('Some Text');
-  }, []);
+    if (destination !== '') {
+      navigation.navigate('AvaibleParks');
+    }
+  }, [destination, navigation]);
 
   return (
-    <View>
+    <View style={{ height: 200 }}>
       <GooglePlacesAutocomplete
         placeholder="Escribe a la zona donde quieres ir"
         minLength={2}
@@ -22,10 +28,10 @@ export const SearchGoogleInput = () => {
           textInputContainer: {
             top: 20,
             backgroundColor: 'grey',
-            width: 270,
+            width: 300,
           },
           textInput: {
-            height: 38,
+            height: 50,
             color: '#5d5d5d',
             fontSize: 16,
           },
@@ -33,9 +39,8 @@ export const SearchGoogleInput = () => {
             color: '#1faadb',
           },
         }}
-        onPress={(data, details = null) => {
-          // 'details' is provided when fetchDetails = true
-          console.log(data, details);
+        onPress={data => {
+          setDestination(data.place_id);
         }}
         query={{
           key: apiGoogle,
