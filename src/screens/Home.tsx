@@ -14,7 +14,9 @@ export const Home = ({ navigation }: any) => {
         onPress={() => navigation.navigate('FormAvaiblePark')}>
         <Text style={styles.text}>Busco Aparcamiento</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.option}>
+      <TouchableOpacity
+        style={styles.option}
+        onPress={() => navigation.navigate('OfferParkForm')}>
         <Text style={styles.text}>Ofrezco Aparcamiento</Text>
       </TouchableOpacity>
     </View>

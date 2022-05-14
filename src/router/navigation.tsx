@@ -4,6 +4,7 @@ import { Home } from '../screens/Home';
 import { AvaibleParks } from '../screens/AvaibleParks';
 import { FormAvaiblePark } from '../screens/FormAvaiblePark';
 import { ConfirmationParkingBooking } from '../screens/ConfirmationParkingBooking';
+import { OfferParkForm } from '../screens/OfferParkForm';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,7 @@ export const Navigation = () => {
         name="ConfirmationParkingBooking"
         component={ConfirmationParkingBooking}
       />
+      <Stack.Screen name="OfferParkForm" component={OfferParkForm} />
     </Stack.Navigator>
   );
 };
